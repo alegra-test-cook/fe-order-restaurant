@@ -3,10 +3,11 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { RefreshCcw, FileText, Book } from "lucide-react";
+import { RefreshCcw, FileText, Book, Package } from "lucide-react";
 import { OrderItem, type Order } from "@/components/OrderItem";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LogsManager } from "@/components/LogsManager";
+import { WarehouseManager } from "@/components/WarehouseManager";
 
 const API_URL =
   "https://sandboxtesting.info/orders";
@@ -73,10 +74,14 @@ export function RestaurantInterface() {
       </div>
 
       <Tabs defaultValue="ordenes" value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className="grid w-full grid-cols-2 mb-4">
+        <TabsList className="grid w-full grid-cols-3 mb-4">
           <TabsTrigger value="ordenes" className="flex items-center gap-2">
             <FileText className="h-4 w-4" />
             Órdenes
+          </TabsTrigger>
+          <TabsTrigger value="bodega" className="flex items-center gap-2">
+            <Package className="h-4 w-4" />
+            Bodega
           </TabsTrigger>
           <TabsTrigger value="logs" className="flex items-center gap-2">
             <Book className="h-4 w-4" />
@@ -114,6 +119,10 @@ export function RestaurantInterface() {
               )}
             </CardContent>
           </Card>
+        </TabsContent>
+
+        <TabsContent value="bodega">
+          <WarehouseManager />
         </TabsContent>
 
         <TabsContent value="logs">
