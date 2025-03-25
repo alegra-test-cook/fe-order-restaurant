@@ -9,7 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LogsManager } from "@/components/LogsManager";
 
 const API_URL =
-  "http://ec2-18-225-234-44.us-east-2.compute.amazonaws.com/orders";
+  "https://sandboxtesting.info/orders";
 
 export function RestaurantInterface() {
   const [orders, setOrders] = useState<Order[]>([]);
