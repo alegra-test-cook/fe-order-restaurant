@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { LogsView, type LogEntry } from "@/components/LogsView";
 
-const API_URL = "http://ec2-18-225-234-44.us-east-2.compute.amazonaws.com/orders";
+const API_URL = "https://sandboxtesting.info/orders";
 
 export function LogsManager() {
   const [logs, setLogs] = useState<LogEntry[]>([]);
